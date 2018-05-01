@@ -12,11 +12,9 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 ENV NPM_CONFIG_LOGLEVEL info
 ENV NODE_VERSION 8.1.2
-ENV YARN_VERSION 0.24.6
+ENV YARN_VERSION 1.6.0
 
 ADD packages.txt /tmp/packages.txt
-ADD requirements.txt /tmp/requirements.txt
-
 RUN apt-get update -y \
   && xargs -a /tmp/packages.txt apt-get install -y
 
@@ -75,14 +73,20 @@ RUN set -ex \
   && ln -s /opt/yarn/bin/yarn /usr/local/bin/yarnpkg \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz
 
+RUN npm install -g configurable-http-proxy
 RUN pip3 install --upgrade pip
+
+ADD requirements.txt /tmp/requirements.txt
 RUN pip3 install -r /tmp/requirements.txt
 
-RUN npm install -g configurable-http-proxy
-RUN pip3 install jupyterhub
+COPY ./enable-extensions.sh /
+RUN chown -R ds /enable-extensions.sh
+RUN sh /enable-extensions.sh
 
 COPY ./entrypoint.sh /
 RUN chown -R ds /entrypoint.sh
+
+RUN chown -R ds /usr/local/share/jupyter/
 
 USER ds
 ENV HOME=/home/ds/mnt
