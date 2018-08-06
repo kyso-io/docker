@@ -42,7 +42,7 @@ jobs:
           name: Push application Docker image
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              login="$(aws ecr get-login)"
+              login="$(aws ecr get-login --region us-west-1)"
               ${login}
               docker tag app "${ECR_ENDPOINT}"
               docker push "${ECR_ENDPOINT}"
