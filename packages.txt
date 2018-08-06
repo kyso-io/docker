@@ -11,7 +11,6 @@ liblapack-dev
 libatlas-base-dev
 libxml2-dev
 libxslt1-dev
-libreadline6
 libreadline6-dev
 build-essential
 curl
@@ -37,7 +36,6 @@ python-numpy
 cmake
 libjpeg-dev
 xvfb
-libav-tools
 xorg-dev
 python-opengl
 libboost-all-dev
