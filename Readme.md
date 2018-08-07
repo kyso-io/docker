@@ -28,3 +28,6 @@ will use it by default.
 When we have a good working build, transfer the default jupyter config files
 into the image itself, we don't want to always need to specify a config file
 for default params.
+
+
+docker run --rm -it -p 80:8888 --user=root -e NB_UID=500 -e NB_GID=500 -e JUPYTER_ENABLE_LAB=yes -e CHOWN_HOME=yes -v "/efs/container-1":/home/jovyan jupyter/base-notebook start-notebook.sh
