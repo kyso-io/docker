@@ -5,5 +5,5 @@ FROM jupyter/tensorflow-notebook
 #
 # RUN pipenv install -r /tmp/requirements.txt
 #
-# RUN jupyter labextension install jupyterlab_bokeh
+RUN jupyter labextension install @kyso/jupyterlab
 # RUN jupyter labextension install @jupyterlab/plotly-extension
