@@ -1,3 +1,8 @@
 jupyterhub_cookie_secret
 jupyterhub.sqlite
 .bash_history
+.jupyter
+.local
+.cache
+.config
+.npm
