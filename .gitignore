@@ -6,3 +6,4 @@ jupyterhub.sqlite
 .cache
 .config
 .npm
+.DS_Store
