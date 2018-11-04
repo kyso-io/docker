@@ -7,3 +7,5 @@ jupyterhub.sqlite
 .config
 .npm
 .DS_Store
+.ipython
+.ipynb_checkpoints
