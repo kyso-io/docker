@@ -10,7 +10,7 @@ RUN jupyter labextension uninstall @jupyterlab/hub-extension
 RUN jupyter labextension uninstall jupyter-threejs
 RUN jupyter labextension uninstall jupyterlab-datawidgets
 RUN jupyter labextension uninstall jupyterlab_bokeh
-RUN jupyter labextension install @kyso/jupyterlab@1.5.0 --no-build
+RUN jupyter labextension install @kyso/jupyterlab@1.5.1 --no-build
 RUN jupyter labextension install @jupyterlab/plotly-extension --no-build
 RUN jupyter labextension install @jupyterlab/statusbar --no-build
 RUN jupyter labextension update jupyterlab_bokeh --no-build
