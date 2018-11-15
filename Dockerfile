@@ -14,6 +14,6 @@ RUN jupyter labextension install @jupyterlab/plotly-extension --no-build
 RUN jupyter labextension install @jupyterlab/statusbar --no-build
 RUN jupyter labextension update jupyterlab_bokeh --no-build
 RUN jupyter labextension update @jupyter-widgets/jupyterlab-manager --no-build
-RUN jupyter labextension install @kyso/jupyterlab@1.5.2 --no-build
+RUN jupyter labextension install @kyso/jupyterlab@1.6.1 --no-build
 RUN jupyter lab build
 RUN pip install 'prompt-toolkit==1.0.15'
