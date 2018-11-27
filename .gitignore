@@ -10,3 +10,5 @@ jupyterhub.sqlite
 .ipython
 .ipynb_checkpoints
 Untitled.ipynb
+.conda
+static

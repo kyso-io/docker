@@ -8,7 +8,4 @@ docker run --rm -it \
   -v "$(pwd):/home/jovyan" \
   -p 8888:8888 \
   858604803370.dkr.ecr.us-east-1.amazonaws.com/kyso/jupyterlab:latest \
-  start-notebook.sh \
-  --Application.log_level='DEBUG' \
-  --NotebookApp.token="" \
-  --LabApp.override_static_url='https://d2yxburkq0qq6r.cloudfront.net/'
+  bash
