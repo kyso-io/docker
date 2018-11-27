@@ -24,4 +24,3 @@ RUN cd /opt/conda/share/jupyter/lab/staging/ && \
   node yarn.js clean && \
   node yarn.js build:prod && \
   cd /home/jovyan
-RUN pip install 'prompt-toolkit==1.0.15'
