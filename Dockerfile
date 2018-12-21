@@ -15,7 +15,7 @@ RUN jupyter labextension install @jupyterlab/plotly-extension --no-build
 RUN jupyter labextension install @jupyterlab/statusbar --no-build
 RUN jupyter labextension update jupyterlab_bokeh --no-build
 RUN jupyter labextension update @jupyter-widgets/jupyterlab-manager --no-build
-RUN jupyter labextension install @kyso/jupyterlab@1.7.5 --no-build
+RUN jupyter labextension install @kyso/jupyterlab@1.8.3 --no-build
 RUN pip install kyso_jupyterlab
 RUN jupyter serverextension enable --sys-prefix kyso_jupyterlab
 RUN jupyter lab build

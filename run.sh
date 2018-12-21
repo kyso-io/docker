@@ -11,4 +11,4 @@ docker run --rm -it \
   start-notebook.sh \
   --Application.log_level='DEBUG' \
   --NotebookApp.token="" \
-  --LabApp.override_static_url='https://d2yxburkq0qq6r.cloudfront.net/'
+  # --LabApp.override_static_url='https://d2yxburkq0qq6r.cloudfront.net/'
