@@ -35,3 +35,9 @@ RUN pip install gym[atari]
 RUN pip install gym[box2d]
 RUN pip install gym[classic_control]
 RUN pip install pyscreenshot Pillow pyvirtualdisplay
+RUN pip install easyAI
+RUN pip install simpleai
+RUN pip install neurolab
+RUN pip install cufflinks
+RUN pip install RISE
+RUN jupyter-nbextension install rise --py --sys-prefix
