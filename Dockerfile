@@ -24,3 +24,14 @@ RUN cd /opt/conda/share/jupyter/lab/staging/ && \
   node yarn.js clean && \
   node yarn.js build:prod && \
   cd /home/jovyan
+RUN conda install pymeep -y
+USER root
+RUN apt-get update
+RUN apt-get install -y python3-dev zlib1g-dev libjpeg-dev cmake swig python-pyglet python3-opengl libboost-all-dev libsdl2-dev \
+    libosmesa6-dev patchelf ffmpeg xvfb
+USER $NB_UID
+RUN pip install gym
+RUN pip install gym[atari]
+RUN pip install gym[box2d]
+RUN pip install gym[classic_control]
+RUN pip install pyscreenshot Pillow pyvirtualdisplay
