@@ -42,6 +42,8 @@ RUN pip install cufflinks
 RUN pip install RISE
 RUN jupyter-nbextension install rise --py --sys-prefix
 
+RUN jupyter labextension install jupyterlab-chart-editor
+
 ENV JUPYTER_ENABLE_LAB=yes
 ENV NB_GID=500
 ENV NB_UID=500
