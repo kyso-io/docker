@@ -15,9 +15,6 @@ RUN jupyter labextension install @jupyterlab/plotly-extension --no-build
 RUN jupyter labextension install @jupyterlab/statusbar --no-build
 RUN jupyter labextension update jupyterlab_bokeh --no-build
 RUN jupyter labextension update @jupyter-widgets/jupyterlab-manager --no-build
-RUN jupyter labextension install @kyso/jupyterlab@1.9.0 --no-build
-RUN pip install kyso_jupyterlab
-RUN jupyter serverextension enable --sys-prefix kyso_jupyterlab
 RUN jupyter lab build
 RUN cd /opt/conda/share/jupyter/lab/staging/ && \
   node yarn.js && \
@@ -44,6 +41,10 @@ RUN jupyter-nbextension install rise --py --sys-prefix
 
 RUN jupyter labextension install jupyterlab-chart-editor
 
+RUN jupyter labextension install @kyso/jupyterlab@1.11.3 --no-build
+RUN pip install kyso_jupyterlab
+RUN jupyter serverextension enable --sys-prefix kyso_jupyterlab
+RUN jupyter lab build
 ENV JUPYTER_ENABLE_LAB=yes
 ENV NB_GID=500
 ENV NB_UID=500
